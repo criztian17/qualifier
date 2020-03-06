@@ -2,12 +2,18 @@
 
 namespace Qualifier.Repository.Entities
 {
-    public class TaxiEntity
+    public partial class TaxiEntity
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Taxi Id
+        /// </summary>
+        [Key]
+        public int TaxiId { get; set; }
 
-        [StringLength(6,MinimumLength = 6 , ErrorMessage = "The {0} field must have {1} characters.")]
-        [Required(ErrorMessage = "The {0} field is mandatory.")]
-        public string Plaque { get; set; }
+        /// <summary>
+        /// Car Plate
+        /// </summary>
+        [MaxLength(9)]
+        public string CarPlate { get; set; }
     }
 }
